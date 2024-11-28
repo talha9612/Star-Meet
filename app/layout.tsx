@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { Toaster } from "@/components/ui/toaster"
+import "@stream-io/video-react-sdk/dist/css/styles.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,11 +28,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      <ClerkProvider
+      appearance={{
+        layout:{
+          logoImageUrl: 'icons/logo.svg',
+          socialButtonsVariant: 'iconButton'
+        },
+        variables:{
+          colorText: '#fff',
+          colorPrimary: '#0E78F9',
+          colorBackground: '#5DE2E7',
+          colorInputBackground: '#252a41',
+          colorInputText: '#fff'
+        }
+      }}
       >
-        {children}
-      </body>
+        <body
+          className={`${geistSans.className} bg-dark-2`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+          <Toaster />
+        </body>
+      </ClerkProvider>
     </html>
   );
 }
