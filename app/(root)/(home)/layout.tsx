@@ -2,7 +2,14 @@ import Navbar from "@/components/Navbar"
 import Sidebar from "@/components/Sidebar"
 
 import React, {ReactNode} from "react"
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Star Meet",
+    description: "Created by Star Automation",
+    icons:{
+      icon:'/icons/star.svg'
+    } 
+  };
 const Homelayout =({children} : {children : ReactNode})=>{
     return (
         <main className="relative">
