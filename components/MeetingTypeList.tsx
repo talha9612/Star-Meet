@@ -11,8 +11,9 @@ import { useUser } from '@clerk/nextjs';
 import Loader from './Loader';
 import { Textarea } from './ui/textarea';
 import ReactDatePicker from 'react-datepicker';
-import { useToast } from './ui/use-toast';
-import { Input } from './ui/input';
+import { useToast } from '@/hooks/use-toast';
+// import { Input } from './ui/input';
+import Input from './ui/input';  // This should match the location of the input.tsx file
 
 const initialValues = {
   dateTime: new Date(),
@@ -72,6 +73,7 @@ const MeetingTypeList = () => {
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
       <HomeCard
+      className=""
         img="/icons/add-meeting.svg"
         title="New Meeting"
         description="Start an instant meeting"
