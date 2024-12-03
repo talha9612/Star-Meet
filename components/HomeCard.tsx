@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image';
-import clsx from 'clsx';
 import { cn } from '@/lib/utils';
 interface HomeCardProps {
     className: string,
