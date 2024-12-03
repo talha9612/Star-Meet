@@ -7,5 +7,4 @@ const SignInPage = () => {
     </main>
   )
 }
-
 export default SignInPage

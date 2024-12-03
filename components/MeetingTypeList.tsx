@@ -174,6 +174,7 @@ const MeetingTypeList = () => {
         buttonText="Start Meeting"
         handleClick={createMeeting}
       />
+      
     </section>
   );
 };
